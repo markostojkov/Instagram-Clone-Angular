@@ -1,0 +1,25 @@
+<h1>NewsFeed</h1>
+<hr />
+<button class="btn btn-primary btn-lg mb-2" (click)="createMode = !createMode">
+	{{ !createMode ? "Create" : "Close" }}
+</button>
+<photo-create
+	[createMode]="createMode"
+	(createChild)="createPhoto($event)"
+></photo-create>
+<cdk-virtual-scroll-viewport itemSize="150" style="height: 75vh; width: 100%;">
+	<div style="width: 100%;" *cdkVirtualFor="let photo of photos | async">
+		<div class="photo-link my-3 p-3" [routerLink]="[photo.id]">
+			<div class="text-center photo-container">
+				<img
+					src="{{ photo.thumbnailUrl }}"
+					class="img-fluid thumbnail-image"
+					alt="Image"
+				/>
+				<h2>{{ photo.title }}</h2>
+			</div>
+		</div>
+	</div>
+</cdk-virtual-scroll-viewport>
+
+

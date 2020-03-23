@@ -1,0 +1,15 @@
+.content {
+	margin-top: 80px;
+}
+.photo-link {
+	background-color: #ececec;
+}
+.photo-link:hover {
+	filter: contrast(90%);
+	cursor: pointer;
+}
+
+.thumbnail-image {
+	width: 150px !important;
+	height: 150px !important;
+}
